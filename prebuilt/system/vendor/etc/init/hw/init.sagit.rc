@@ -116,13 +116,13 @@ on property:wc_transport.start_root=true
 on property:wc_transport.start_root=false
     stop hci_filter_root
 
-service hci_filter_root /system/vendor/bin/wcnss_filter
+service hci_filter_root /vendor/bin/wcnss_filter
     class late_start
     user bluetooth
     group bluetooth oem_2950 system
     disabled
 
-service nv_mac /system/vendor/bin/nv_mac
+service nv_mac /vendor/bin/nv_mac
     class main
     user root
     group root oem_2950

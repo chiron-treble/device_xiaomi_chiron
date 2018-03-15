@@ -1,10 +1,10 @@
 # Audio
-persist.audio.calfile0=/system/vendor/etc/acdbdata/ChironS/Forte_ChironS_Bluetooth_cal.acdb
-persist.audio.calfile1=/system/vendor/etc/acdbdata/ChironS/Forte_ChironS_General_cal.acdb
-persist.audio.calfile2=/system/vendor/etc/acdbdata/ChironS/Forte_ChironS_Global_cal.acdb
-persist.audio.calfile3=/system/vendor/etc/acdbdata/ChironS/Forte_ChironS_Handset_cal.acdb
-persist.audio.calfile4=/system/vendor/etc/acdbdata/ChironS/Forte_ChironS_Hdmi_cal.acdb
-persist.audio.calfile5=/system/vendor/etc/acdbdata/ChironS/Forte_ChironS_Headset_cal.acdb
+persist.audio.calfile0=/vendor/etc/acdbdata/ChironS/Forte_ChironS_Bluetooth_cal.acdb
+persist.audio.calfile1=/vendor/etc/acdbdata/ChironS/Forte_ChironS_General_cal.acdb
+persist.audio.calfile2=/vendor/etc/acdbdata/ChironS/Forte_ChironS_Global_cal.acdb
+persist.audio.calfile3=/vendor/etc/acdbdata/ChironS/Forte_ChironS_Handset_cal.acdb
+persist.audio.calfile4=/vendor/etc/acdbdata/ChironS/Forte_ChironS_Hdmi_cal.acdb
+persist.audio.calfile5=/vendor/etc/acdbdata/ChironS/Forte_ChironS_Headset_cal.acdb
 audio.adm.buffering.ms=6
 af.fast_track_multiplier=2
 vendor.audio_hal.period_size=192
@@ -120,7 +120,7 @@ persist.vendor.radio.custom_ecc=1
 persist.vendor.radio.force_on_dc=true
 persist.vendor.radio.sib16_support=1
 ril.subscription.types=RUIM
-rild.libpath=/system/vendor/lib64/libril-qc-qmi-1.so
+rild.libpath=/vendor/lib64/libril-qc-qmi-1.so
 ro.telephony.default_cdma_sub=0
 ro.telephony.default_network=22,22
 ro.use_data_netmgrd=true

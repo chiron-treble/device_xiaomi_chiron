@@ -135,8 +135,7 @@ PRODUCT_COPY_FILES += \
 
 # Prebuilt
 PRODUCT_COPY_FILES += \
-    $(call find-copy-subdir-files,*,device/xiaomi/chiron/prebuilt/system,system) \
-    $(call find-copy-subdir-files,*,device/xiaomi/chiron/prebuilt/root,root)
+    $(call find-copy-subdir-files,*,device/xiaomi/chiron/prebuilt/vendor,$(TARGET_COPY_OUT_VENDOR)) \
 
 # ANT+
 PRODUCT_PACKAGES += \
@@ -369,7 +368,3 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/wifi/WCNSS_qcom_cfg.ini:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/WCNSS_qcom_cfg.ini \
     $(LOCAL_PATH)/configs/wifi/wifi_concurrency_cfg.txt:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wifi_concurrency_cfg.txt
-
-# Remove packages
-PRODUCT_PACKAGES += \
-    RemovePackages

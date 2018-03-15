@@ -45,6 +45,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
+# Device was launched with N
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.product.first_api_level=25
+
 # Permissions
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.audio.low_latency.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.audio.low_latency.xml \
@@ -91,14 +95,8 @@ PRODUCT_ENFORCE_RRO_TARGETS := \
     framework-res
 
 # Device uses high-density artwork where available
-PRODUCT_AAPT_CONFIG := normal
+PRODUCT_AAPT_CONFIG := xxhdpi
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
-
-# Boot animation
-TARGET_SCREEN_HEIGHT := 1920
-TARGET_SCREEN_WIDTH := 1080
-
-# Haters gonna hate..
 PRODUCT_CHARACTERISTICS := nosdcard
 
 # Audio
@@ -139,24 +137,22 @@ PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,device/xiaomi/chiron/prebuilt/root,root)
 
 # ANT+
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     AntHalService \
     com.dsi.ant.antradio_library \
     libantradio
 
-PRODUCT_COPY_FILES += \
+#PRODUCT_COPY_FILES += \
     external/ant-wireless/antradio-library/com.dsi.ant.antradio_library.xml:system/etc/permissions/com.dsi.ant.antradio_library.xml
 
 # Bluetooth HAL
 PRODUCT_PACKAGES += \
-    android.hardware.bluetooth@1.0-impl \
-    android.hardware.bluetooth@1.0-service \
     libbt-vendor \
     libbthost_if
 
 # Camera
 PRODUCT_PACKAGES += \
-    Snap \
+    SnapdragonCamera2 \
     libshim_MiCamera
 
 PRODUCT_COPY_FILES += \
@@ -176,9 +172,13 @@ PRODUCT_PACKAGES += \
     copybit.msm8998 \
     gralloc.msm8998 \
     hwcomposer.msm8998 \
-    memtrack.msm8998 \
-    libdisplayconfig \
     libhwc2on1adapter \
+    libdisplayconfig \
+    libsdmcore \
+    libqservice \
+    libgpu_tonemapper \
+    libqdMetaData.system \
+    memtrack.msm8998 \
     libgenlock \
     liboverlay \
     libtinyxml
@@ -193,6 +193,7 @@ PRODUCT_PACKAGES += \
 
 # GPS
 PRODUCT_PACKAGES += \
+    gps.conf \
     libgnss \
     libgps.utils \
     liblocation_api \
@@ -202,7 +203,6 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/gps/flp.conf:$(TARGET_COPY_OUT_VENDOR)/etc/flp.conf \
-    $(LOCAL_PATH)/configs/gps/gps.conf:$(TARGET_COPY_OUT_VENDOR)/etc/gps.conf \
     $(LOCAL_PATH)/configs/gps/izat.conf:$(TARGET_COPY_OUT_VENDOR)/etc/izat.conf \
     $(LOCAL_PATH)/configs/gps/lowi.conf:$(TARGET_COPY_OUT_VENDOR)/etc/lowi.conf \
     $(LOCAL_PATH)/configs/gps/sap.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sap.conf \
@@ -240,7 +240,7 @@ PRODUCT_COPY_FILES += \
 
 # Lights
 PRODUCT_PACKAGES += \
-    lights.msm8998
+    lights.qcom
 
 # LiveDisplay jni
 PRODUCT_PACKAGES += \
@@ -285,6 +285,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     libc2dcolorconvert \
     libextmedia_jni \
+    libhypv_intercept \
     libOmxAacEnc \
     libOmxAmrEnc \
     libOmxCore \

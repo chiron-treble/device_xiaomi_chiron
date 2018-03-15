@@ -285,5 +285,10 @@ WIFI_DRIVER_PROBE_DELAY := 15
 # Properties
 TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
 
+# Treble
+PRODUCT_FULL_TREBLE_OVERRIDE := true
+PRODUCT_SHIPPING_API_LEVEL := 25
+PRODUCT_COMPATIBILITY_MATRIX_LEVEL_OVERRIDE := 27
+
 # inherit from the proprietary version
 -include vendor/xiaomi/chiron/BoardConfigVendor.mk

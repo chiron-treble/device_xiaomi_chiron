@@ -27,9 +27,12 @@ PRODUCT_PACKAGES += \
     android.hardware.graphics.allocator@2.0-service \
     android.hardware.graphics.mapper@2.0-impl \
     android.hardware.memtrack@1.0-impl \
+    android.hardware.memtrack@1.0-service \
     android.hardware.graphics.composer@2.1-impl \
+    android.hardware.graphics.composer@2.1-service \
     vendor.display.config@1.0 \
     vendor.display.config@1.0_vendor
+
 
 # DRM
 PRODUCT_PACKAGES += \
@@ -60,8 +63,7 @@ PRODUCT_PACKAGES += \
 # HIDL
 PRODUCT_PACKAGES += \
     android.hidl.base@1.0 \
-    android.hidl.manager@1.0 \
-    android.hidl.manager@1.0-java
+    android.hidl.manager@1.0
 
 # Keymaster HAL
 PRODUCT_PACKAGES += \
@@ -75,17 +77,12 @@ PRODUCT_PACKAGES += \
 
 # Netutils
 PRODUCT_PACKAGES += \
-    android.system.net.netd@1.0 \
-    netutils-wrapper-1.0
+    android.system.net.netd@1.0
 
 # NFC
 PRODUCT_PACKAGES += \
     android.hardware.nfc@1.0-impl \
     android.hardware.nfc@1.0-service
-
-# Power
-PRODUCT_PACKAGES += \
-    android.hardware.power@1.1-service-qti
 
 # RenderScript HAL
 PRODUCT_PACKAGES += \

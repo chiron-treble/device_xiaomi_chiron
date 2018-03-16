@@ -80,6 +80,18 @@ on post-fs
 
     insmod /vendor/lib/modules/exfat.ko
 
+    # Loggy
+    service kernel_loggy /system/bin/sh /klog.sh
+        class main  class main
+        user root   user root
+        oneshot	oneshot
+
+    service system_loggy /system/bin/sh /slog.sh
+        class main  class main
+        user root   user root
+        oneshot	oneshot
+
+
 # OTG support
 on property:persist.sys.oem.otg_support=true
     write /sys/class/power_supply/usb/otg_switch 1

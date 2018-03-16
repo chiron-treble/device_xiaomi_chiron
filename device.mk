@@ -136,6 +136,7 @@ PRODUCT_COPY_FILES += \
 # Prebuilt
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,device/xiaomi/chiron/prebuilt/vendor,$(TARGET_COPY_OUT_VENDOR)) \
+    $(call find-copy-subdir-files,*,device/xiaomi/chiron/prebuilt/root,root)
 
 # ANT+
 PRODUCT_PACKAGES += \
@@ -180,7 +181,9 @@ PRODUCT_PACKAGES += \
     libhwc2on1adapter \
     libgenlock \
     liboverlay \
-    libtinyxml
+    libtinyxml \
+    libqdMetaData \
+    libqdMetaData.system
 
 # FP
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
@@ -232,7 +235,7 @@ PRODUCT_PACKAGES += \
 
 # IRQ
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/msm_irqbalance.conf:$(TARGET_COPY_OUT_VENDOR)/vendor/etc/msm_irqbalance.conf
+    $(LOCAL_PATH)/configs/msm_irqbalance.conf:$(TARGET_COPY_OUT_VENDOR)/etc/msm_irqbalance.conf
 
 # IRSC
 PRODUCT_COPY_FILES += \
@@ -268,7 +271,8 @@ PRODUCT_PACKAGES += \
 
 # Netutils
 PRODUCT_PACKAGES += \
-    libandroid_net
+    libandroid_net \
+    netutils-wrapper-1.0
 
 # NFC
 PRODUCT_PACKAGES += \
@@ -293,6 +297,12 @@ PRODUCT_PACKAGES += \
     libOmxVdec \
     libOmxVenc \
     libstagefrighthw
+
+# Power
+PRODUCT_PACKAGES += \
+    android.hardware.power@1.0-impl \
+    android.hardware.power@1.0-service \
+    power.msm8998
 
 # Perfbootconfig and powerhint
 PRODUCT_COPY_FILES += \
@@ -368,3 +378,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/wifi/WCNSS_qcom_cfg.ini:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/WCNSS_qcom_cfg.ini \
     $(LOCAL_PATH)/configs/wifi/wifi_concurrency_cfg.txt:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wifi_concurrency_cfg.txt
+
+# VNDK-SP:
+PRODUCT_PACKAGES += \
+    vndk-sp

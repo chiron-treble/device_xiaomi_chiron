@@ -155,6 +155,10 @@ BOARD_CHARGER_ENABLE_SUSPEND := true
 BOARD_CHARGER_DISABLE_INIT_BLANK := true
 WITH_LINEAGE_CHARGER := false
 
+# Vendor init
+TARGET_INIT_VENDOR_LIB := libinit_chiron
+TARGET_RECOVERY_DEVICE_MODULES := libinit_chiron
+
 # CNE and DPM
 BOARD_USES_QCNE := true
 
@@ -256,7 +260,7 @@ include device/qcom/sepolicy/sepolicy.mk
 #BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy
 
 # Sensors
-USE_SENSOR_MULTI_HAL := true
+#USE_SENSOR_MULTI_HAL := true
 
 # Time Service
 BOARD_USES_QC_TIME_SERVICES := true

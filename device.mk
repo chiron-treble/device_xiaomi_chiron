@@ -217,6 +217,13 @@ PRODUCT_PACKAGES += \
     PresencePolling \
     ims-ext-common
 
+# RCS
+PRODUCT_PACKAGES += \
+    rcs_service_aidl \
+    rcs_service_aidl.xml \
+    rcs_service_api \
+    rcs_service_api.xml
+
 # Input
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/idc/uinput-fpc.idc:$(TARGET_COPY_OUT_VENDOR)/usr/idc/uinput-fpc.idc \
@@ -359,15 +366,14 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 
 # Wifi
 PRODUCT_PACKAGES += \
-    libwpa_client \
+    hostapd \
+    hostapd_cli \
     libqsap_sdk \
     libQWiFiSoftApCfg \
-    wificond \
-    hostapd \
-    nv_mac \
-    dhcpcd.conf \
+    libwifi-hal-qcom \
     wpa_supplicant \
-    wpa_supplicant.conf
+    wpa_supplicant.conf \
+    nv_mac
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/wifi/p2p_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/p2p_supplicant_overlay.conf \
